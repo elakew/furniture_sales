@@ -1,7 +1,7 @@
 # furniture_sales
 Analysis of sales data from a furniture store using SQLite
 
-In the analysis file, I have provided the SQL to creates a table of the furniture suppliers and the countries in which they are based. The id for each entry corresponds with the supplier_id in the sales table.
+In the analysis file, I created a table of the furniture suppliers and the countries in which they are based. The id for each entry corresponds with the supplier_id in the sales table.
 
 In terms of data analysis, the following customized reports were generated:
   - Total sales of products organized by highest to lowest.
