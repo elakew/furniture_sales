@@ -11,21 +11,25 @@ INSERT INTO suppliers(Name, Country) VALUES('AllModern', 'United States');
 
 SELECT * FROM suppliers;
 
+/* Total sales by product */
 SELECT product, ('$' || SUM(price)) AS Total_Sales 
 FROM sales GROUP BY product ORDER BY Total_Sales desc;
 
 
+/* Total purchases by customers limited to more $5,000 */
 SELECT name AS Customer_Name, ('$' || SUM(price)) AS Total_Purchases 
 FROM sales GROUP BY name HAVING SUM(price) > 5000 
 ORDER BY SUM(price) desc;
 
 
+/* Sales and supplier tables joined */
 SELECT s.transaction_date as Date, s.name as Customer, s.product as Product, s.price as Price, su.Name as Supplier, su.Country 
 FROM sales s INNER JOIN suppliers su 
 ON su.id = s.supplier 
 WHERE price > 1500 ORDER BY price desc;
 
 
+/* Categorize customer value by total lifetime purchases */
 SELECT name AS Customer_Name, ('$' || SUM(price)) AS Total_Purchases,
 CASE 
     WHEN SUM(price) >= 5000 THEN 'High'
@@ -36,11 +40,13 @@ FROM sales
 GROUP BY name ORDER BY SUM(price) desc;
 
 
+/* Average purchase of customers by their state */ 
 SELECT state AS State_Province, ('$' || ROUND(AVG(price))) AS Average_Purchase 
 FROM sales GROUP BY state HAVING ROUND(AVG(price)) > 2500 
 ORDER BY ROUND(AVG(price)) desc;
 
 
+/* Total Sales by Supplier */
 SELECT su.Name as Supplier, su.Country, ('$' || SUM(s.price)) as Total_Sales 
 FROM suppliers su JOIN sales s 
 ON su.id = s.supplier 
