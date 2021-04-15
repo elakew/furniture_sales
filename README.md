@@ -10,3 +10,6 @@ In terms of data analysis, I generated the following customized reports:
   - Categorization of customer value by total purchases wherein those with more than $5,000 are marked 'High,' those with more than $2,000 are marked 'Medium,' and all other customers are marked 'Standard.'
   - Average purchases made by customers organized by their state or province and limited to states with customers who average more than $2,500.
   - Total sales by furniture supplier
+
+**Impact and Applications** 
+- By analyzing the data, we can leverage these insights to inform the strategic decisions of the furniture store. For example, we can better anticipate a greater need for inventory of certain types of furniture, allocate greater marketing funds to states with moderate or low average sales, and tailor digital marketing and discount offers based on the customer segmentation.
